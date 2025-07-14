@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -5,14 +6,30 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import "./NavigationBar.css";
 
 const NavigationBar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // Trigger after 50px scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       {["xxl"].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar
+          sticky="top"
+          key={expand}
+          expand={expand}
+          className={`mb-3 navbar-custom ${scrolled ? "scrolled" : ""}`}
+        >
           <Container>
-            <Navbar href="#" className="homeName">
-              Akram Khan
-            </Navbar>
+            <Navbar.Brand href="#" className="homeName">
+              Learn Business Intelligence with Tushar
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -21,7 +38,10 @@ const NavigationBar = () => {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <h1 className="homeName">Akram Khan</h1>
+                  <h1 className="homeName">
+                    {" "}
+                    Learn Business Intelligence with Tushar
+                  </h1>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>

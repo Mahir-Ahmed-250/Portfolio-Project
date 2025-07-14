@@ -1,0 +1,71 @@
+.homeContainer {
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.homeTypeWriter {
+    font-family: "Raleway", sans-serif;
+    color: rgb(239 68 68);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.homeDescription {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+    margin-right: 200px;
+    line-height: 28px;
+}
+
+.bannerImg {
+    width: 384px;
+    height: 384px;
+}
+
+.hireBtn {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    background: none;
+    color: rgb(249 115 22);
+    border: 2px solid rgb(249 115 22);
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 90px;
+    height: 48px;
+}
+
+.hireBtn:hover {
+    background: rgb(38, 38, 38);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.resumeBtn {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    background: #FBBD23;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 30px;
+    width: 137.2px;
+    height: 48px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .homeContainer {
+        flex-direction: column;
+    }
+
+    .homeDescription {
+
+        margin-right: 0px;
+
+    }
+}

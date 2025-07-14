@@ -1,0 +1,16 @@
+.title {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.title2 {
+    color: rgb(249 115 22);
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 30px;
+    }
+}
