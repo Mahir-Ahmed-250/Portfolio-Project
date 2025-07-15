@@ -18,6 +18,7 @@ const JobExperiences = () => {
           <JobExperience key={experience.id} experience={experience} />
         ))}
       </div>
+      <hr className="mt-4" />
     </>
   );
 };

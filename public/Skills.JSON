@@ -1,0 +1,53 @@
+[
+    {
+      "id": "1",
+      "name": "Git",
+      "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    },
+    {
+      "id": "2",
+      "name": "Docker",
+      "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    },
+    {
+      "id": "3",
+      "name": "Figma",
+      "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+    },
+    {
+      "id": "4",
+      "name": "JIRA",
+      "img": "https://play-lh.googleusercontent.com/_AZCbg39DTuk8k3DiPRASr9EwyW058pOfzvAu1DsfN9ygtbOlbuucmXaHJi5ooYbokQX"
+    },
+    {
+      "id": "5",
+      "name": "VS Code",
+      "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+    },
+    {
+      "id": "6",
+      "name": "Postman",
+      "img": "https://avatars.slack-edge.com/2024-04-05/6934042159649_ac803d1cddbcbef8f110_512.png"
+    },
+    {
+      "id": "7",
+      "name": "Slack",
+      "img": "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg"
+    },
+    {
+      "id": "8",
+      "name": "Notion",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"
+    },
+    {
+      "id": "9",
+      "name": "Trello",
+      "img": "https://cdn.worldvectorlogo.com/logos/trello.svg"
+    },
+    {
+      "id": "10",
+      "name": "Photoshop",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/512px-Adobe_Photoshop_CC_icon.svg.png"
+    }
+  ]
+  
