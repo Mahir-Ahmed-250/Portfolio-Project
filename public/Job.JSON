@@ -1,0 +1,26 @@
+[
+    {
+      "id": "1",
+      "name": "Pathao Ltd",
+      "img": "https://play-lh.googleusercontent.com/iDgVznPhzb5rXDnNVDC0wwlTc_t5pDcmcPziJkLjk8wySwPqNeI5N8wVRPHQNRNydQ=w240-h480-rw",
+      "position":"Data Analytics & Strategy",
+      "duration":"06/2024 - Present",
+      "desc1":"Analyzed courier data to optimize delivery efficiency and service quality.",
+      "desc2":"Developed dashboards to monitor KPIs, including sales metrics.",
+      "desc3":"Calculated sales KPIs to support revenue growth strategies.",
+      "desc4":"Collaborated with teams to enhance logistics and customer experience.",
+      "desc5":"Streamlined data processes, improving accuracy and efficiency."
+    },
+    {
+        "id": "2",
+        "name": "EdTech Instructor, Data Analytics & Power BI",
+        "img": "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/uafghaqbcztyzdjiudn6",
+        "position":"Data Analytics & Strategy",
+        "duration":"06/2024 - Present",
+        "desc1":"Analyzed courier data to optimize delivery efficiency and service quality.",
+        "desc2":"Developed dashboards to monitor KPIs, including sales metrics.",
+        "desc3":"Calculated sales KPIs to support revenue growth strategies.",
+        "desc4":"Collaborated with teams to enhance logistics and customer experience.",
+        "desc5":"Streamlined data processes, improving accuracy and efficiency."
+      }
+]

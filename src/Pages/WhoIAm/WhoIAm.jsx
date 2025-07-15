@@ -32,6 +32,7 @@ const WhoIAm = () => {
           technology.
         </p>
       </div>
+      <hr className="mt-4" />
     </>
   );
 };
