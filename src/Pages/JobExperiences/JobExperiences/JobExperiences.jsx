@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Title from "../../Components/Title/Title";
-import JobExperience from "./JobExperience";
+import Title from "../../../Components/Title/Title";
+import JobExperience from "../JobExperience/JobExperience";
 
 const JobExperiences = () => {
   const [experiences, setExperiences] = useState([]);
