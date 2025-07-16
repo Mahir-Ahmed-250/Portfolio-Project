@@ -4,6 +4,7 @@ import WhoIAm from "../WhoIAm/WhoIAm";
 import JobExperiences from "../JobExperiences/JobExperiences/JobExperiences";
 import MySkills from "../MySkills/MySkills/MySkills";
 import MyProjects from "../MyProjects/MyProjects/MyProjects";
+import MyArticles from "../MyArticles/MyArticles/MyArticles";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <JobExperiences />
       <MySkills />
       <MyProjects />
+      <MyArticles />
     </div>
   );
 };

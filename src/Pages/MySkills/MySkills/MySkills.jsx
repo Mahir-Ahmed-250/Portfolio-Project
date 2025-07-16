@@ -4,7 +4,6 @@ import Title from "../../../Components/Title/Title";
 
 const MySkills = () => {
   const [skills, setSkills] = useState([]);
-  console.log(skills);
   useEffect(() => {
     fetch("Skills.JSON")
       .then((res) => res.json())

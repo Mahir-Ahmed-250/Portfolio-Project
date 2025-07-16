@@ -6,7 +6,7 @@ const JobExperiences = () => {
   const [experiences, setExperiences] = useState([]);
   console.log(experiences);
   useEffect(() => {
-    fetch("Job.JSON")
+    fetch("Jobs.JSON")
       .then((res) => res.json())
       .then((data) => setExperiences(data));
   }, []);

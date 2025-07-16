@@ -4,7 +4,6 @@ import MyProject from "../MyProject/MyProject";
 
 const MyProjects = () => {
   const [projects, setProjects] = useState([]);
-  console.log(projects);
   useEffect(() => {
     fetch("Projects.JSON")
       .then((res) => res.json())
