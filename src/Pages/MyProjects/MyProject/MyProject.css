@@ -1,0 +1,27 @@
+.projectName {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2563EB;
+}
+
+.projectCard {
+    border: 2px solid #F97316;
+    border-radius: 20px;
+}
+
+.projectDesc {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F2937;
+}
+
+.tech-span {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    background: #570DF8;
+    border-radius: 20px;
+    color: #E0D2FE;
+    font-weight: 600;
+}

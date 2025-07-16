@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Retail Customer Cohort Analysis",
+    "technology": "POWER BI | COHORT ANALYSIS | DAX",
+    "img": "https://i.ibb.co/YdHmMT4/Screenshot-2024-03-19-042157.png",
+    "desc": "The project employs Power BI for retail cohort analysis, covering retention, performance, churn, churned customer insights, and recovered customer assessment."
+  },
+  {
+    "id": 2,
+    "name": "Job Market Analysis",
+    "technology": "POWER BI | COHORT ANALYSIS | DAX",
+    "img": "https://i.ibb.co/Chd2y2Y/db.png",
+    "desc": "The project offers an in-depth exploration of the job market using Power BI, aiming to provide insights into job trends, skill demand, and geographical distribution of opportunities."
+  },
+  {
+    "id": 3,
+    "name": "Adventure Work Bike Shop Data Analysis",
+    "technology": "POWER BI | COHORT ANALYSIS | DAX",
+    "img": "https://i.ibb.co/fk9jwpM/adventure-Work.png",
+    "desc": "Build an interactive dashboard using Power BI to analyze and visualize data from the Maven Analytics Adventure Works dataset."
+  }
+]

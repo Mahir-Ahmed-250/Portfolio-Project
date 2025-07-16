@@ -3,6 +3,7 @@ import HomeBanner from "../HomeBanner/HomeBanner";
 import WhoIAm from "../WhoIAm/WhoIAm";
 import JobExperiences from "../JobExperiences/JobExperiences/JobExperiences";
 import MySkills from "../MySkills/MySkills/MySkills";
+import MyProjects from "../MyProjects/MyProjects/MyProjects";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <WhoIAm />
       <JobExperiences />
       <MySkills />
+      <MyProjects />
     </div>
   );
 };
