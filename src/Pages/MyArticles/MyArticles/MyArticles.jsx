@@ -42,7 +42,6 @@ const MyArticles = () => {
       <Title title="My" title2="Articles" />
       <center className="row">
         <Carousel
-          className="container"
           autoPlay
           autoPlaySpeed={3000}
           centerMode={false}
@@ -54,7 +53,8 @@ const MyArticles = () => {
           responsive={responsive}
           rewind={false}
           slidesToSlide={1}
-          arrows={false}>
+          arrows={false}
+        >
           {articles.map((article) => (
             <MyArticle key={article.id} article={article} />
           ))}
