@@ -1,0 +1,34 @@
+.skills-container {
+    gap: 20px;
+    /* Optional spacing */
+}
+
+.skills-container>* {
+    flex: 1 1 calc(20% - 20px);
+    /* 5 columns, minus spacing */
+    max-width: calc(20% - 20px);
+}
+
+@media (max-width: 992px) {
+    .skills-container>* {
+        flex: 1 1 calc(33.33% - 20px);
+        /* 3 columns on medium */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container>* {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 columns on small */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .skills-container>* {
+        flex: 1 1 100%;
+        /* 1 column on extra small */
+        max-width: 100%;
+    }
+}

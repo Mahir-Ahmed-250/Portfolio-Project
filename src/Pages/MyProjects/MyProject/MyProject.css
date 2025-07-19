@@ -3,6 +3,8 @@
     font-size: 16px;
     font-weight: 600;
     color: #2563EB;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .projectCard {
@@ -15,6 +17,8 @@
     font-size: 14px;
     font-weight: 600;
     color: #1F2937;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .tech-span {

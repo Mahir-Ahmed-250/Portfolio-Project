@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MySkill from "../MySkill/MySkill";
 import Title from "../../../Components/Title/Title";
+import "./MySkills.css";
 
 const MySkills = () => {
   const [skills, setSkills] = useState([]);
@@ -12,7 +13,7 @@ const MySkills = () => {
   return (
     <>
       <Title title="My" title2="Skills" />
-      <div className="row">
+      <div className="skills-container d-flex flex-wrap justify-content-center">
         {skills.map((skill) => (
           <MySkill key={skill.id} skill={skill} />
         ))}
