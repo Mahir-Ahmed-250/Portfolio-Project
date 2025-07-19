@@ -40,7 +40,7 @@ const MyArticles = () => {
   return (
     <>
       <Title title="My" title2="Articles" />
-      <center className="row">
+      <div className="row">
         <Carousel
           autoPlay
           autoPlaySpeed={3000}
@@ -59,7 +59,7 @@ const MyArticles = () => {
             <MyArticle key={article.id} article={article} />
           ))}
         </Carousel>
-      </center>
+      </div>
 
       <hr className="mt-4" />
     </>
