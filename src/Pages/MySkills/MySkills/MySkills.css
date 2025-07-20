@@ -16,19 +16,3 @@
         max-width: calc(33.33% - 20px);
     }
 }
-
-@media (max-width: 768px) {
-    .skills-container>* {
-        flex: 1 1 calc(50% - 20px);
-        /* 2 columns on small */
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 576px) {
-    .skills-container>* {
-        flex: 1 1 100%;
-        /* 1 column on extra small */
-        max-width: 100%;
-    }
-}

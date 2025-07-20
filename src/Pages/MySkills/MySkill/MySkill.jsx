@@ -6,7 +6,7 @@ const MySkill = ({ skill }) => {
   return (
     <>
       <div>
-        <center style={{ borderRadius: "10px" }} className="skillsCard p-4">
+        <center style={{ borderRadius: "10px" }} className="skillsCard">
           <img src={img} width="40%" alt="" />
           <br />
           <br />

@@ -4,7 +4,7 @@ import "./MyProject.css";
 const MyProject = ({ project }) => {
   const { name, technology, img, desc } = project;
   return (
-    <div className="col-md-4 mb-4 mt-4">
+    <div className="col-lg-4 col-md-6 mb-4 mt-4">
       <div className="card h-100 d-flex flex-column projectCard">
         <img
           src={img}
