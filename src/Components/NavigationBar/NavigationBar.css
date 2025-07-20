@@ -4,11 +4,11 @@
     font-style: normal;
     font-size: 36px;
     line-height: 2.5rem;
-    color: rgb(249 115 22);
+    color: #570DF8;
 }
 
 .homeName:hover {
-    color: rgb(249 115 22);
+    color: #570DF8;
 }
 
 .navbar-toggler {

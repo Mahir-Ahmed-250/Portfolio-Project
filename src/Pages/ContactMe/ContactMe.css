@@ -1,0 +1,12 @@
+.mailContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.copyrightText {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
