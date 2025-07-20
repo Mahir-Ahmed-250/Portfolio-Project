@@ -14,16 +14,14 @@ const HomeBanner = () => {
     <>
       <div className="homeContainer">
         <div>
-          <Title title="HI, I'M" title2="Mehedi Hasan Tushar" />
+          <Title title="Learn BI with" title2="Tushar" />
 
           <p className="homeTypeWriter">
             <Typewriter
               words={[
-                "Data Cleaning & Preprocessing",
-                "Data Analysis & Interpretation",
-                "Data Visualization",
-                "Statistical & Mathematical Knowledge",
-                "SQL & Database Management",
+                "Microsoft Certified Data Analyst",
+                "Data Engineer",
+                "Data Enthusiast",
               ]}
               loop={5}
               cursor

@@ -1,0 +1,18 @@
+.achievementContainer {
+    display: flex;
+}
+
+.achievementImg {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .achievementContainer {
+        flex-direction: column;
+    }
+
+    .achievementImg {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+}
