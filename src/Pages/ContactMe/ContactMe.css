@@ -10,3 +10,17 @@
     font-size: 18px;
     text-align: center;
 }
+
+.mailForm {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .mailContainer {
+        flex-direction: column;
+    }
+
+    .mailForm {
+        width: 100%;
+    }
+}

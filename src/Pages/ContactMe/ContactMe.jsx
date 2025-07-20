@@ -23,7 +23,7 @@ const ContactMe = () => {
     <>
       <div className="mailContainer">
         <Player autoplay loop src={animationData} />
-        <div style={{ width: "50%" }}>
+        <div className="mailForm">
           <div className="d-flex">
             <Title title2="Contact" />
             <span className="ms-2"></span>
