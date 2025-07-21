@@ -8,7 +8,7 @@ const AboutMe = () => {
   return (
     <>
       <Title title="About" title2="Me" />
-      <div className="AboutMeContainer">
+      <div className="AboutMeContainer" id="about">
         <Player autoplay loop src={animationData} />
         <p className="AboutMedescription">
           Microsoft Certified Data Analyst with 4 years of experience in Power

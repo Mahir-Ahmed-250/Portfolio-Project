@@ -12,7 +12,7 @@ import Title from "../../Components/Title/Title";
 const HomeBanner = () => {
   return (
     <>
-      <div className="homeContainer">
+      <div className="homeContainer" id="home">
         <div>
           <Title title="Learn BI with" title2="Tushar" />
 

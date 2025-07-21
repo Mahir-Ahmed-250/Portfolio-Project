@@ -13,7 +13,10 @@ const MySkills = () => {
   return (
     <>
       <Title title="My" title2="Skills" />
-      <div className="skills-container d-flex flex-wrap justify-content-center">
+      <div
+        className="skills-container d-flex flex-wrap justify-content-center"
+        id="skills"
+      >
         {skills.map((skill) => (
           <MySkill key={skill.id} skill={skill} />
         ))}

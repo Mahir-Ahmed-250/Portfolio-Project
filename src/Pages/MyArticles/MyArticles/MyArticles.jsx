@@ -3,6 +3,7 @@ import Title from "../../../Components/Title/Title";
 import MyArticle from "../MyArticle/MyArticle";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "./MyArticles.css";
 
 const MyArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -40,7 +41,7 @@ const MyArticles = () => {
   return (
     <>
       <Title title="My" title2="Articles" />
-      <div className="row">
+      <div className="row articlesContainer" id="articles">
         <Carousel
           autoPlay
           autoPlaySpeed={3000}

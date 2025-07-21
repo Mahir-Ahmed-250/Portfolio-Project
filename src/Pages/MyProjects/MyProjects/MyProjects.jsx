@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../../Components/Title/Title";
 import MyProject from "../MyProject/MyProject";
+import "./MyProjects.css";
 
 const MyProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -12,7 +13,7 @@ const MyProjects = () => {
   return (
     <>
       <Title title="My" title2="Projects" />
-      <div className="row">
+      <div className="row projectsContainer" id="projects">
         {projects.map((project) => (
           <MyProject key={project.id} project={project} />
         ))}

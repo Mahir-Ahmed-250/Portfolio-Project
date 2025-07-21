@@ -1,6 +1,7 @@
 .skills-container {
     gap: 20px;
     /* Optional spacing */
+    scroll-margin-top: 250px;
 }
 
 .skills-container>* {

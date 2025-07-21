@@ -27,7 +27,7 @@ const NavigationBar = () => {
           className={`mb-3 navbar-custom ${scrolled ? "scrolled" : ""}`}
         >
           <Container>
-            <Navbar.Brand href="#" className="homeName">
+            <Navbar.Brand href="#home" className="homeName">
               Learn Business Intelligence with Tushar
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -46,22 +46,22 @@ const NavigationBar = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1" className="homeLink">
+                  <Nav.Link href="#home" className="homeLink">
                     Home
                   </Nav.Link>
-                  <Nav.Link href="#action2" className="homeLink">
+                  <Nav.Link href="#about" className="homeLink">
                     About
                   </Nav.Link>
-                  <Nav.Link href="#action2" className="homeLink">
+                  <Nav.Link href="#skills" className="homeLink">
                     Skills
                   </Nav.Link>
-                  <Nav.Link href="#action2" className="homeLink">
+                  <Nav.Link href="#projects" className="homeLink">
                     Projects
                   </Nav.Link>
-                  <Nav.Link href="#action2" className="homeLink">
+                  <Nav.Link href="#articles" className="homeLink">
                     Articles
                   </Nav.Link>
-                  <Nav.Link href="#action2" className="homeLink">
+                  <Nav.Link href="#contact" className="homeLink">
                     Contact
                   </Nav.Link>
                 </Nav>
