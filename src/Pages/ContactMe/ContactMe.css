@@ -33,6 +33,10 @@
     font-weight: 600;
 }
 
+.custom-textarea {
+    font-family: "Raleway", sans-serif;
+}
+
 @media screen and (max-width: 768px) {
     .mailContainer {
         flex-direction: column;

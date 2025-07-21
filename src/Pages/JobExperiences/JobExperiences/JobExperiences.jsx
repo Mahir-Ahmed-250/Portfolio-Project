@@ -14,8 +14,8 @@ const JobExperiences = () => {
     <>
       <Title title="Job" title2="Experience" />
       <div className="row">
-        {experiences.map((experience) => (
-          <JobExperience key={experience.id} experience={experience} />
+        {experiences.map((experience, index) => (
+          <JobExperience key={index} experience={experience} index={index} />
         ))}
       </div>
       <hr className="mt-4" />

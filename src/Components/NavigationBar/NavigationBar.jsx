@@ -7,15 +7,18 @@ import "./NavigationBar.css";
 
 const NavigationBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // Trigger after 50px scroll
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
 
   return (
     <>
@@ -24,46 +27,46 @@ const NavigationBar = () => {
           sticky="top"
           key={expand}
           expand={expand}
-          className={`mb-3 navbar-custom ${scrolled ? "scrolled" : ""}`}
-        >
+          className={`mb-3 navbar-custom ${scrolled ? "scrolled" : ""}`}>
           <Container>
             <Navbar.Brand href="#home" className="homeName">
               Learn Business Intelligence with Tushar
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              onClick={handleShow}
+            />
             <Navbar.Offcanvas
+              show={showOffcanvas}
+              onHide={handleClose}
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
+              placement="end">
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   <h1 className="homeName">
-                    {" "}
                     Learn Business Intelligence with Tushar
                   </h1>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#home" className="homeLink">
-                    Home
-                  </Nav.Link>
-                  <Nav.Link href="#about" className="homeLink">
-                    About
-                  </Nav.Link>
-                  <Nav.Link href="#skills" className="homeLink">
-                    Skills
-                  </Nav.Link>
-                  <Nav.Link href="#projects" className="homeLink">
-                    Projects
-                  </Nav.Link>
-                  <Nav.Link href="#articles" className="homeLink">
-                    Articles
-                  </Nav.Link>
-                  <Nav.Link href="#contact" className="homeLink">
-                    Contact
-                  </Nav.Link>
+                  {[
+                    "home",
+                    "about",
+                    "skills",
+                    "projects",
+                    "articles",
+                    "contact",
+                  ].map((section) => (
+                    <Nav.Link
+                      key={section}
+                      href={`#${section}`}
+                      className="homeLink"
+                      onClick={handleClose}>
+                      {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </Nav.Link>
+                  ))}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

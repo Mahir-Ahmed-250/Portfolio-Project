@@ -16,8 +16,21 @@ const MyAchievement = () => {
           width="100%"
           height="350px"
           className="achievementImg"
+          data-aos="fade-up"
+          data-aos-offset="500"
+          data-aos-delay="80"
+          data-aos-duration="2000"
         />
-        <img src={img2} alt="" width="100%" height="350px" />
+        <img
+          src={img2}
+          alt=""
+          width="100%"
+          height="350px"
+          data-aos="fade-down"
+          data-aos-offset="500"
+          data-aos-delay="80"
+          data-aos-duration="2000"
+        />
       </div>
       <hr className="mt-4" />
     </>

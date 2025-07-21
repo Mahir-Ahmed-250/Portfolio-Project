@@ -67,8 +67,7 @@ const ContactMe = () => {
             ref={formRef}
             noValidate
             validated={validated}
-            onSubmit={handleSubmit}
-          >
+            onSubmit={handleSubmit}>
             <input
               type="hidden"
               name="time"
@@ -77,25 +76,40 @@ const ContactMe = () => {
 
             <Form.Group className="mb-3" controlId="validationCustom01">
               <Form.Label className="formLabel">Name</Form.Label>
-              <Form.Control required type="text" name="user_name" />
+              <Form.Control
+                required
+                type="text"
+                name="user_name"
+                className="custom-textarea"
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="validationCustom02">
               <Form.Label className="formLabel">Email</Form.Label>
-              <Form.Control required type="email" name="user_email" />
+              <Form.Control
+                required
+                type="email"
+                name="user_email"
+                className="custom-textarea"
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="validationCustom03">
               <Form.Label className="formLabel">Message</Form.Label>
-              <Form.Control required as="textarea" rows={8} name="message" />
+              <Form.Control
+                required
+                as="textarea"
+                rows={8}
+                name="message"
+                className="custom-textarea"
+              />
             </Form.Group>
 
             <Button
               variant="outline-primary"
               type="submit"
               className="w-100 mailBtn"
-              disabled={sending}
-            >
+              disabled={sending}>
               {sending ? (
                 <>
                   <Spinner animation="border" size="sm" /> Sending...

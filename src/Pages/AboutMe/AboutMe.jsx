@@ -10,7 +10,12 @@ const AboutMe = () => {
       <Title title="About" title2="Me" />
       <div className="AboutMeContainer" id="about">
         <Player autoplay loop src={animationData} />
-        <p className="AboutMedescription">
+        <p
+          className="AboutMedescription"
+          data-aos="flip-right"
+          data-aos-offset="500"
+          data-aos-delay="80"
+          data-aos-duration="2000">
           Microsoft Certified Data Analyst with 4 years of experience in Power
           BI, SQL, SSRS, Snowflake, and Microsoft Fabric. Proficient in data
           analytics, data mining, data warehousing, and data governance, with
