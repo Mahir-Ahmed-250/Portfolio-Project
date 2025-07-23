@@ -1,0 +1,31 @@
+.loginContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.loginForm {
+    font-family: 'Signika Negative', sans-serif;
+    border-style: double;
+    padding: 80px;
+}
+
+.loading-gif {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+@media screen and (max-width: 1080px) {
+    .loginContainer {
+        flex-direction: column;
+    }
+
+    .s {
+        width: 100%;
+
+    }
+}

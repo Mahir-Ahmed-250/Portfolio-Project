@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./NavigationBar.css";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,9 +30,11 @@ const NavigationBar = () => {
           expand={expand}
           className={`mb-3 navbar-custom ${scrolled ? "scrolled" : ""}`}>
           <Container>
-            <Navbar.Brand href="#home" className="homeName">
-              Learn Business Intelligence with Tushar
-            </Navbar.Brand>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Navbar.Brand className="homeName">
+                Learn Business Intelligence with Tushar
+              </Navbar.Brand>
+            </Link>
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
               onClick={handleShow}

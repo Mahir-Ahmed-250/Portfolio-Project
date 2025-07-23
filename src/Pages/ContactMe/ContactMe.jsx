@@ -4,9 +4,9 @@ import animationData from "../../Assets/email.json";
 import Title from "../../Components/Title/Title";
 import { Button, Form, Spinner } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./ContactMe.css";
+import { toast } from "react-toastify";
 
 const ContactMe = () => {
   const formRef = useRef();
@@ -15,11 +15,6 @@ const ContactMe = () => {
 
   const [validated, setValidated] = useState(false);
   const [sending, setSending] = useState(false);
-  const [toastMsg, setToastMsg] = useState({
-    show: false,
-    message: "",
-    success: true,
-  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -126,20 +121,6 @@ const ContactMe = () => {
       <p className="copyrightText">
         Copyright © {year} Mehedi Hasan Tushar. All Rights Reserve
       </p>
-
-      {/* ✅ Toast Message */}
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </>
   );
 };
