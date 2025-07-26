@@ -7,10 +7,12 @@ import MyArticles from "../MyArticles/MyArticles/MyArticles";
 import ContactMe from "../ContactMe/ContactMe";
 import AboutMe from "../AboutMe/AboutMe";
 import MyAchievements from "../Achievements/MyAchievements";
+import NavigationBar from "../../Components/NavigationBar/NavigationBar";
 
 const Home = () => {
   return (
     <div className="container">
+      <NavigationBar />
       <HomeBanner />
       <AboutMe />
       <MyAchievements />

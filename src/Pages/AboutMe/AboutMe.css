@@ -5,13 +5,13 @@
     scroll-margin-top: 200px;
 }
 
-.AboutMedescription {
+.AboutMeDescription {
     font-family: "Raleway", sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     text-align: justify;
     line-height: 28px;
-    width: 60%;
+    width: 90%;
 }
 
 @media screen and (max-width: 768px) {
@@ -19,7 +19,7 @@
         flex-direction: column;
     }
 
-    .AboutMedescription {
+    .AboutMeDescription {
         width: 100%;
     }
 }

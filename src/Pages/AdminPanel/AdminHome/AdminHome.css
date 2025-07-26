@@ -1,0 +1,19 @@
+.adminHomeContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.adminNavigation {
+    border: double;
+    padding: 20px;
+    color: black;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1080px) {
+    .adminHomeContainer {
+        flex-direction: column;
+    }
+}
