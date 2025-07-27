@@ -8,6 +8,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../../../Assets/Loading.json";
 import "./AdminLogin.css";
 import { Link } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
 
 const AdminLogin = () => {
   const { loginUser, loading } = useFirebase();
@@ -42,7 +43,8 @@ const AdminLogin = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-          }}>
+          }}
+        >
           <Player
             autoplay
             loop
@@ -58,7 +60,12 @@ const AdminLogin = () => {
           <center>
             {" "}
             <Title title1="" title2="Admin Login" />
-            <Link to="/">Home</Link>
+            <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
+              <span className="logoutBtn">
+                <IoHome className="me-1" />
+                Home
+              </span>
+            </Link>
           </center>
           <div className="loginContainer">
             <div>
@@ -73,6 +80,9 @@ const AdminLogin = () => {
                     className="form-control form-control-lg mb-2 w-100"
                     onChange={handleEmail}
                     required
+                    style={{
+                      fontFamily: "Raleway",
+                    }}
                     placeholder="Admin Email"
                   />
                 </div>
@@ -83,6 +93,9 @@ const AdminLogin = () => {
                     type={passwordShown ? "text" : "password"}
                     required
                     onChange={handlePassword}
+                    style={{
+                      fontFamily: "Raleway",
+                    }}
                     placeholder="Enter a password"
                   />
 

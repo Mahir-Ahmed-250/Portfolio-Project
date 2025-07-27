@@ -11,6 +11,17 @@
     margin-top: 20px;
 }
 
+.adminHomeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoutBtn {
+    font-size: 25px;
+    font-weight: 700;
+    color: #223C61;
+}
 
 @media screen and (max-width: 1080px) {
     .adminHomeContainer {

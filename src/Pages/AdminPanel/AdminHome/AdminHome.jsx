@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import Title from "../../../Components/Title/Title";
 import useFirebase from "../../../Hooks/useFirebase";
 import { FiLogOut } from "react-icons/fi";
 import "./AdminHome.css";
+import { Link } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
 
 const AdminHome = () => {
   const { logOut } = useFirebase();
@@ -29,15 +30,25 @@ const AdminHome = () => {
   };
   return (
     <>
-      <div className="container " style={{ paddingTop: "10%" }}>
-        <Title title1="" title2="Welcome to Admin Dashboard" />
-        <li
-          style={{ cursor: "pointer" }}
-          className="nav-link"
-          onClick={handleLogout}>
-          <FiLogOut className="me-1" />
-          Log Out
-        </li>
+      <div className="container" style={{ paddingTop: "5%" }}>
+        <div className="adminHomeHeader">
+          <Title title1="" title2="Welcome to Admin Dashboard" />
+
+          <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
+            <span className="logoutBtn">
+              <IoHome className="me-1" />
+              Home
+            </span>
+          </Link>
+          <span
+            style={{ cursor: "pointer" }}
+            className="logoutBtn"
+            onClick={handleLogout}
+          >
+            <FiLogOut className="me-1" />
+            Log Out
+          </span>
+        </div>
         <div className="adminHomeContainer mb-5">
           <div></div>
           <div className="container pb-5">
