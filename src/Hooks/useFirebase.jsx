@@ -11,10 +11,11 @@ import { useState } from "react";
 // import { getStorage } from "firebase/storage";
 import initializeFirebase from "../Firebase/firebase.init";
 import { toast } from "react-toastify";
-
+import swal from "sweetalert";
 export const auth = getAuth(initializeFirebase());
 // export const db = getFirestore(initializeFirebase());
 // export const storage = getStorage(initializeFirebase());
+
 const useFirebase = () => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,11 @@ const useFirebase = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         if (userCredential.user) {
-          toast.success("Well Done");
+          swal(
+            "Welcome!",
+            "Welcome to Your Portfolio Website Admin Panel",
+            "success"
+          );
         }
       })
       .catch((error) => {

@@ -3,8 +3,11 @@ import { useState } from "react";
 import Title from "../../../Components/Title/Title";
 import useFirebase from "../../../Hooks/useFirebase";
 import loginImg from "../../../Assets/login.png";
-import "./AdminLogin.css";
 import Button from "../../../Components/Button/Button";
+import { Player } from "@lottiefiles/react-lottie-player";
+import animationData from "../../../Assets/Loading.json";
+import "./AdminLogin.css";
+import { Link } from "react-router-dom";
 
 const AdminLogin = () => {
   const { loginUser, loading } = useFirebase();
@@ -12,7 +15,8 @@ const AdminLogin = () => {
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-
+  const today = new Date();
+  const year = today.getFullYear();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,35 +36,20 @@ const AdminLogin = () => {
   return (
     <>
       {loading ? (
-        <>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <div className="loading-gif"></div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </>
+        <div
+          style={{
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+          <Player
+            autoplay
+            loop
+            src={animationData}
+            style={{ height: "500px", width: "500px" }}
+          />
+        </div>
       ) : (
         <>
           <br />
@@ -69,6 +58,7 @@ const AdminLogin = () => {
           <center>
             {" "}
             <Title title1="" title2="Admin Login" />
+            <Link to="/">Home</Link>
           </center>
           <div className="loginContainer">
             <div>
@@ -121,6 +111,12 @@ const AdminLogin = () => {
           <br />
         </>
       )}
+      <div className="container">
+        <hr className="mt-4" />
+        <p className="copyrightText">
+          Copyright © {year} Mehedi Hasan Tushar. All Rights Reserve
+        </p>
+      </div>
     </>
   );
 };

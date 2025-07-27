@@ -5,9 +5,9 @@ import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLink } from "react-icons/fa6";
-
-import "./HomeBanner.css";
+import Img from "../../Assets/Banner.jpg";
 import Title from "../../Components/Title/Title";
+import "./HomeBanner.css";
 
 const HomeBanner = () => {
   return (
@@ -32,14 +32,27 @@ const HomeBanner = () => {
             />
           </p>
           <p className="homeDescription">
-            To utilize my expertise in data analysis, business intelligence, and
-            data science, along with proficiency in Python, Power BI, R, SQL,
-            and Excel, to drive strategic decision-making and business growth
-            through innovative projects and actionable insights. Passionate
-            about leveraging machine learning and AI, I aim to collaborate with
-            teams to solve complex problems and deliver impactful solutions,
-            while continuously expanding my skill set and staying abreast of
-            emerging trends in data science.
+            I’m Mehedi Hasan Tushar, a Microsoft Certified Data Analyst and Data
+            Engineer with 4+ years of industry experience turning raw data into
+            powerful business decisions through compelling visuals and
+            intelligent automation.
+            <br />
+            <br />
+            Currently working at GhorerBazar BD, I specialize in building
+            scalable data architectures, automating ETL pipelines, and
+            developing end-to-end BI solutions using Power BI, SQL, Python, and
+            modern tools like Microsoft Fabric.
+            <br />
+            <br /> Previously at Labaid Pharmaceuticals Ltd, I played a key role
+            in ERP and MIS data workflows—focusing on performance tuning, data
+            governance using DQS & MDM, and crafting enterprise-grade SSIS
+            pipelines.
+            <br />
+            <br />
+            🔍 Whether it's exploring customer lifecycle trends, forecasting
+            demand, or enabling self-service analytics, I thrive as a data
+            storyteller, visualization expert, and BI strategist—bridging the
+            gap between data complexity and business clarity.
           </p>
           <FaLinkedin
             style={{
@@ -84,11 +97,7 @@ const HomeBanner = () => {
           </h5>
         </div>
         <center>
-          <img
-            src="https://sajibkhansk.netlify.app/assets/sajib-0b6803fc.png"
-            className="bannerImg"
-            alt="BannerImage"
-          />
+          <img src={Img} className="bannerImg" alt="BannerImage" />
         </center>
       </div>
       <hr className="mt-4" />
