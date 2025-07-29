@@ -7,14 +7,14 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 
-// import { getFirestore } from "firebase/firestore";
-// import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 import initializeFirebase from "../Firebase/firebase.init";
 import { toast } from "react-toastify";
 import swal from "sweetalert";
 export const auth = getAuth(initializeFirebase());
-// export const db = getFirestore(initializeFirebase());
-// export const storage = getStorage(initializeFirebase());
+export const db = getFirestore(initializeFirebase());
+export const storage = getStorage(initializeFirebase());
 
 const useFirebase = () => {
   const [user, setUser] = useState();
@@ -70,6 +70,7 @@ const useFirebase = () => {
     loading,
     loginUser,
     logOut,
+    db,
   };
 };
 

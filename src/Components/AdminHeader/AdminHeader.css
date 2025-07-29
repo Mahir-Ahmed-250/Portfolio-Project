@@ -1,0 +1,29 @@
+.adminHeaderTitle {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 48px;
+    color: #223C61;
+}
+
+.adminHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.adminHeaderIconContainer {
+    display: flex;
+}
+
+.adminHeaderIcon {
+    display: flex;
+    align-items: center;
+}
+
+.adminHeaderIconBtn {
+    font-size: 25px;
+    font-weight: 700;
+    color: #223C61;
+}

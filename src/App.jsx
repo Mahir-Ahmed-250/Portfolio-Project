@@ -8,6 +8,10 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "./Assets/Loading.json";
 import { useLayoutEffect } from "react";
 import AdminLogin from "./Pages/AdminPanel/AdminLogin/AdminLogin";
+import AdminJobExperience from "./Pages/AdminPanel/AdminJobExperience/AdminJobExperience";
+import AdminSkills from "./Pages/AdminPanel/AdminSkills/AdminSkills";
+import AdminProjects from "./Pages/AdminPanel/AdminProjects/AdminProjects";
+import AdminArticles from "./Pages/AdminPanel/AdminArticles/AdminArticles";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -42,20 +46,40 @@ function App() {
   return (
     <>
       <Wrapper>
-        <Routes>
-          {user ? (
-            <>
+        {user ? (
+          <>
+            <Routes>
               {" "}
-              <Route path="/" element={<Home />} />{" "}
-              <Route path="/admin" element={<AdminHome />} />
-            </>
-          ) : (
-            <>
-              <Route path="/" element={<Home />} />{" "}
-              <Route path="/admin" element={<AdminLogin />} />
-            </>
-          )}
-        </Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+
+            <div className="adminBg">
+              <Routes>
+                <Route path="/admin" element={<AdminHome />} />
+                <Route
+                  path="/admin/jobExperiences"
+                  element={<AdminJobExperience />}
+                />
+                <Route path="/admin/skills" element={<AdminSkills />} />
+                <Route path="/admin/projects" element={<AdminProjects />} />
+                <Route path="/admin/articles" element={<AdminArticles />} />
+              </Routes>
+            </div>
+          </>
+        ) : (
+          <>
+            {" "}
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+            <div className="adminBg">
+              <Routes>
+                <Route path="/admin" element={<AdminLogin />} />
+              </Routes>
+            </div>
+          </>
+        )}
+
         <ToastContainer
           position="top-right"
           autoClose={5000}

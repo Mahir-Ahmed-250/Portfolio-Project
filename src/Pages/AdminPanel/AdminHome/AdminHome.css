@@ -2,29 +2,50 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 100px;
 }
 
 .adminNavigation {
-    border: double;
+    border: solid 3px #223C61;
     padding: 20px;
-    color: black;
     margin-top: 20px;
-}
-
-.adminHomeHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.logoutBtn {
-    font-size: 25px;
-    font-weight: 700;
+    background: linear-gradient(to left, #ffffff 50%, #223C61 50%);
+    background-size: 250%;
+    background-position: right top;
+    transition: all .9s ease-in-out;
     color: #223C61;
+    ;
 }
+
+.adminNavigation:hover {
+    background-position: left bottom;
+    color: #ffffff;
+}
+
+.adminNavigationTitle {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.adminNavigationText {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+
 
 @media screen and (max-width: 1080px) {
     .adminHomeContainer {
         flex-direction: column;
+    }
+
+    .logoutBtn {
+        font-size: 14px;
+        font-weight: 700;
+        color: #223C61;
     }
 }

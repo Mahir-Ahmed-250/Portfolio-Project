@@ -1,65 +1,77 @@
 import React from "react";
-import swal from "sweetalert";
-import Title from "../../../Components/Title/Title";
-import useFirebase from "../../../Hooks/useFirebase";
-import { FiLogOut } from "react-icons/fi";
+import image from "../../../Assets/dashboard.png";
 import "./AdminHome.css";
 import { Link } from "react-router-dom";
-import { IoHome } from "react-icons/io5";
+import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 
 const AdminHome = () => {
-  const { logOut } = useFirebase();
-  const handleLogout = () => {
-    swal("Logout Warning!", "Do you really want to logout?", "warning", {
-      buttons: {
-        cancel: "NO",
-        catch: {
-          text: "YES",
-          value: "catch",
-        },
-      },
-    }).then((value) => {
-      switch (value) {
-        case "catch":
-          logOut();
-          swal("Well Done!", "You are successfully logged out!", "success");
-          break;
-        default:
-      }
-    });
-  };
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
     <>
+      <AdminHeader title="Welcome to Admin Panel" />
       <div className="container" style={{ paddingTop: "5%" }}>
-        <div className="adminHomeHeader">
-          <Title title1="" title2="Welcome to Admin Dashboard" />
-
-          <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
-            <span className="logoutBtn">
-              <IoHome className="me-1" />
-              Home
-            </span>
-          </Link>
-          <span
-            style={{ cursor: "pointer" }}
-            className="logoutBtn"
-            onClick={handleLogout}
-          >
-            <FiLogOut className="me-1" />
-            Log Out
-          </span>
-        </div>
         <div className="adminHomeContainer mb-5">
-          <div></div>
+          <div>
+            <img src={image} alt="" width="100%" height="100%" />
+          </div>
           <div className="container pb-5">
             <div className="row">
-              <div className="col-lg-6"></div>
-              <div className="col-lg-6"></div>
-              <div className="col-lg-6"></div>
-              <div className="col-lg-6"></div>
+              <div className="col-lg-6 ">
+                <Link
+                  to="/admin/jobExperiences"
+                  style={{ textDecoration: "none" }}>
+                  <div className="adminNavigation">
+                    <h2 className="adminNavigationTitle">Job Experience</h2>
+                    <h6 className="adminNavigationText">
+                      Upload, Update & Delete Job Experience Here
+                    </h6>
+                  </div>
+                </Link>
+              </div>
+              <div className="col-lg-6">
+                {" "}
+                <Link to="/admin/skills" style={{ textDecoration: "none" }}>
+                  <div className="adminNavigation ">
+                    <h2 className="adminNavigationTitle">My Skills</h2>
+                    <h6 className="adminNavigationText">
+                      Upload, Update & Delete My Skills Here
+                    </h6>
+                  </div>
+                </Link>
+              </div>
+              <div className="col-lg-6">
+                {" "}
+                <Link to="/admin/projects" style={{ textDecoration: "none" }}>
+                  <div className="adminNavigation">
+                    <h2 className="adminNavigationTitle">My Projects</h2>
+                    <h6 className="adminNavigationText">
+                      Upload, Update & Delete My Projects Here
+                    </h6>
+                  </div>
+                </Link>
+              </div>
+              <div className="col-lg-6">
+                {" "}
+                <Link to="/admin/articles" style={{ textDecoration: "none" }}>
+                  <div className="adminNavigation">
+                    <h2 className="adminNavigationTitle">My Articles</h2>
+                    <h6 className="adminNavigationText">
+                      Upload, Update & Delete My Articles Here
+                    </h6>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="container">
+        <hr className="mt-4" />
+        <p className="copyrightText">
+          Copyright © {year} Mehedi Hasan Tushar. All Rights Reserve
+        </p>
       </div>
     </>
   );

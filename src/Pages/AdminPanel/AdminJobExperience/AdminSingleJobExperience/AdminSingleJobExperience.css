@@ -1,0 +1,140 @@
+.serialDiv {
+    position: relative;
+    margin-bottom: -24px;
+    background-color: burlywood;
+    width: 20%;
+    font-family: cursive;
+    text-align: center;
+}
+
+.editBtn {
+    border: none;
+    height: 46px;
+    width: 124px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: linear-gradient(to left, #e2e2e2 50%, #ffee00 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.editBtn:hover {
+    background-position: left bottom;
+    color: #000000;
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 450px;
+    max-width: 100%;
+    padding: 25px;
+    border-radius: 3px;
+    transition: 0.2s;
+    margin-right: 30px;
+    border: double;
+}
+
+.choose-file-button {
+    flex-shrink: 0;
+    /* background-color: 
+    border: 1px solid rgba(0, 0, 0, 0.1); */
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.file-message {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.delBtn {
+    border: none;
+    height: 46px;
+    width: 124px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: linear-gradient(to left, #e2e2e2 50%, #e22b2b 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    margin-top: 20px;
+}
+
+.delBtn:hover {
+    background-position: left bottom;
+    color: #fff;
+}
+
+.uploadBtn {
+    border: none;
+    height: 46px;
+    width: 124px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: linear-gradient(to left, #e2e2e2 50%, green 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    margin-top: 20px;
+}
+
+.uploadBtn:hover {
+    background-position: left bottom;
+    color: #fff;
+}
+
+.imgAndDrop {
+    display: flex;
+}
+
+@media screen and (max-width: 760px) {
+    .imgAndDrop {
+        flex-direction: column;
+    }
+
+    .file-drop-area {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .editBtn {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .editBtn {
+        margin-left: 10px;
+    }
+}
