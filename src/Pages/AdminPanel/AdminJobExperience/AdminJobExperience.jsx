@@ -10,8 +10,14 @@ import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 
 const AdminJobExperience = () => {
   const [serial, setSerial] = useState("");
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [companyPosition, setCompanyPosition] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [workDuration, setWorkDuration] = useState("");
+  const [description1, setDescription1] = useState("");
+  const [description2, setDescription2] = useState("");
+  const [description3, setDescription3] = useState("");
+  const [description4, setDescription4] = useState("");
+  const [description5, setDescription5] = useState("");
   const [baseImage, setBaseImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
@@ -21,16 +27,38 @@ const AdminJobExperience = () => {
     setSerial(result);
   };
 
-  const handleName = (e) => {
+  const handleCompanyPosition = (e) => {
     const result = e.target.value;
-    setName(result);
+    setCompanyPosition(result);
   };
-
-  const handleDescription = (e) => {
+  const handleCompanyName = (e) => {
     const result = e.target.value;
-    setDescription(result);
+    setCompanyName(result);
   };
-
+  const handleWorkDuration = (e) => {
+    const result = e.target.value;
+    setWorkDuration(result);
+  };
+  const handleDescription1 = (e) => {
+    const result = e.target.value;
+    setDescription1(result);
+  };
+  const handleDescription2 = (e) => {
+    const result = e.target.value;
+    setDescription2(result);
+  };
+  const handleDescription3 = (e) => {
+    const result = e.target.value;
+    setDescription3(result);
+  };
+  const handleDescription4 = (e) => {
+    const result = e.target.value;
+    setDescription4(result);
+  };
+  const handleDescription5 = (e) => {
+    const result = e.target.value;
+    setDescription5(result);
+  };
   const uploadImage = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -55,18 +83,40 @@ const AdminJobExperience = () => {
   const onClickCreate = async () => {
     setLoading(true);
     try {
-      if (baseImage && serial && name && description) {
+      if (
+        (baseImage &&
+          serial &&
+          companyPosition &&
+          companyName &&
+          workDuration) ||
+        description1 ||
+        description2 ||
+        description3 ||
+        description4 ||
+        description5
+      ) {
         await addDoc(collection(db, "Experience"), {
           serial: serial,
-          name: name,
-          description: description,
+          companyPosition: companyPosition,
+          companyName: companyName,
+          workDuration: workDuration,
+          description1: description1,
+          description2: description2,
+          description3: description3,
+          description4: description4,
+          description5: description5,
           img: baseImage,
         });
         setSerial("");
-        setName("");
-        setDescription("");
+        setCompanyName("");
+        setCompanyName("");
+        setWorkDuration("");
+        setDescription1("");
+        setDescription2("");
+        setDescription3("");
+        setDescription4("");
+        setDescription5("");
         setBaseImage("");
-
         swal(
           "Well Done!",
           "You have successfully Added an New Experience!",
@@ -181,22 +231,63 @@ const AdminJobExperience = () => {
               }}
               placeholder="Serial"
             />
+
             <input
               type="text"
               id="form3Example3"
               className="form-control form-control-lg mb-2 w-50"
-              onChange={handleName}
-              placeholder="Name"
+              onChange={handleCompanyPosition}
+              placeholder="Company Position"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-50"
+              onChange={handleCompanyName}
+              placeholder="Company Name"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-50"
+              onChange={handleWorkDuration}
+              placeholder="Work Duration"
             />
 
-            <textarea
-              type="textarea"
-              rows="10"
-              cols="50"
+            <input
+              type="text"
               id="form3Example3"
               className="form-control form-control-lg mb-2 w-100"
-              onChange={handleDescription}
-              placeholder="Description"
+              onChange={handleDescription1}
+              placeholder="Description Serial 1"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-100"
+              onChange={handleDescription2}
+              placeholder="Description Serial 2"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-100"
+              onChange={handleDescription3}
+              placeholder="Description Serial 3"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-100"
+              onChange={handleDescription4}
+              placeholder="Description Serial 4"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-100"
+              onChange={handleDescription5}
+              placeholder="Description Serial 5"
             />
 
             <div className="imgAndDrop">

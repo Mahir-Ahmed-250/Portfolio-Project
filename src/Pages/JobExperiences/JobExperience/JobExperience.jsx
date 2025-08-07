@@ -2,8 +2,17 @@ import React from "react";
 import "./JobExperience.css";
 
 const JobExperience = ({ experience, index }) => {
-  const { name, img, position, duration, desc1, desc2, desc3, desc4, desc5 } =
-    experience;
+  const {
+    companyPosition,
+    img,
+    companyName,
+    workDuration,
+    description1,
+    description2,
+    description3,
+    description4,
+    description5,
+  } = experience;
 
   const aosAnimation = index % 2 === 0 ? "fade-up" : "fade-down"; // alternate
 
@@ -18,18 +27,18 @@ const JobExperience = ({ experience, index }) => {
         <div className="companyCardHeader ms-4">
           <img style={{ borderRadius: "10px" }} src={img} width="15%" alt="" />
           <div className="ms-3">
-            <span className="companyPositon">{position}</span>
+            <span className="companyPosition">{companyPosition}</span>
             <br />
-            <span className="companyName">{name}</span>
+            <span className="companyName">{companyName}</span>
           </div>
         </div>
-        <p className="companyDuration">{duration}</p>
+        <p className="companyDuration">{workDuration}</p>
         <ul className="companyDesc">
-          <li>{desc1}</li>
-          <li className="mt-1">{desc2}</li>
-          <li className="mt-1">{desc3}</li>
-          <li className="mt-1">{desc4}</li>
-          <li className="mt-1">{desc5}</li>
+          {description1 ? <li>{description1}</li> : <></>}
+          {description2 ? <li>{description2}</li> : <></>}
+          {description3 ? <li>{description3}</li> : <></>}
+          {description4 ? <li>{description4}</li> : <></>}
+          {description5 ? <li>{description5}</li> : <></>}
         </ul>
       </div>
     </div>

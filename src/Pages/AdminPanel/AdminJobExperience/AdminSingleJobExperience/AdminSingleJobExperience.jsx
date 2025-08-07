@@ -7,30 +7,60 @@ import "./AdminSingleJobExperience.css";
 
 function MyVerticallyCenteredModal(props) {
   const [serial, setSerial] = useState(props.experience.serial);
-  const [name, setName] = useState(props.experience.name);
-  const [description, setDescription] = useState(props.experience.description);
-  const [baseImage, setBaseImage] = useState(props.experience.img);
+  const [companyPosition, setCompanyPosition] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [workDuration, setWorkDuration] = useState("");
+  const [description1, setDescription1] = useState("");
+  const [description2, setDescription2] = useState("");
+  const [description3, setDescription3] = useState("");
+  const [description4, setDescription4] = useState("");
+  const [description5, setDescription5] = useState("");
+  const [baseImage, setBaseImage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
 
   const handleSerial = (e) => {
     const result = e.target.value;
     setSerial(result);
   };
-  const handleName = (e) => {
-    const result = e.target.value;
-    setName(result);
-  };
 
-  const handleDescription = (e) => {
+  const handleCompanyPosition = (e) => {
     const result = e.target.value;
-    setDescription(result);
+    setCompanyPosition(result);
   };
-
+  const handleCompanyName = (e) => {
+    const result = e.target.value;
+    setCompanyName(result);
+  };
+  const handleWorkDuration = (e) => {
+    const result = e.target.value;
+    setWorkDuration(result);
+  };
+  const handleDescription1 = (e) => {
+    const result = e.target.value;
+    setDescription1(result);
+  };
+  const handleDescription2 = (e) => {
+    const result = e.target.value;
+    setDescription2(result);
+  };
+  const handleDescription3 = (e) => {
+    const result = e.target.value;
+    setDescription3(result);
+  };
+  const handleDescription4 = (e) => {
+    const result = e.target.value;
+    setDescription4(result);
+  };
+  const handleDescription5 = (e) => {
+    const result = e.target.value;
+    setDescription5(result);
+  };
   const uploadImage = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
     setBaseImage(base64);
   };
-
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -46,19 +76,41 @@ function MyVerticallyCenteredModal(props) {
     });
   };
   const onClickUpdate = async () => {
-    const experienceRef = doc(db, "experience", props.experience.id);
+    const experienceRef = doc(db, "Experience", props.experience.id);
     try {
-      if (baseImage && serial && name && description) {
+      if (
+        (baseImage &&
+          serial &&
+          companyPosition &&
+          companyName &&
+          workDuration) ||
+        description1 ||
+        description2 ||
+        description3 ||
+        description4 ||
+        description5
+      ) {
         await updateDoc(experienceRef, {
           serial: serial,
-          name: name,
-          description: description,
+          companyPosition: companyPosition,
+          companyName: companyName,
+          workDuration: workDuration,
+          description1: description1,
+          description2: description2,
+          description3: description3,
+          description4: description4,
+          description5: description5,
           img: baseImage,
         });
-
         setSerial(serial);
-        setName(name);
-        setDescription(description);
+        setCompanyName(companyPosition);
+        setCompanyName(companyName);
+        setWorkDuration(workDuration);
+        setDescription1(description1);
+        setDescription2(description2);
+        setDescription3(description3);
+        setDescription4(description4);
+        setDescription5(description5);
         setBaseImage(baseImage);
 
         swal(
@@ -128,19 +180,68 @@ function MyVerticallyCenteredModal(props) {
 
           <input
             type="text"
+            id="form3Example3"
             className="form-control form-control-lg mb-2 w-100"
-            onChange={handleName}
-            defaultValue={props.experience.name}
-            placeholder="Name"
+            onChange={handleCompanyPosition}
+            defaultValue={props.experience.companyPosition}
+            placeholder="Company Position"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleCompanyName}
+            defaultValue={props.experience.companyName}
+            placeholder="Company Name"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleWorkDuration}
+            defaultValue={props.experience.workDuration}
+            placeholder="Work Duration"
           />
 
-          <textarea
-            row="6"
-            cols="10"
+          <input
+            type="text"
+            id="form3Example3"
             className="form-control form-control-lg mb-2 w-100"
-            onChange={handleDescription}
-            defaultValue={props.experience.description}
-            placeholder="Description"
+            onChange={handleDescription1}
+            defaultValue={props.experience.description1}
+            placeholder="Description Serial 1"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription2}
+            defaultValue={props.experience.description2}
+            placeholder="Description Serial 2"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription3}
+            defaultValue={props.experience.description3}
+            placeholder="Description Serial 3"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription4}
+            defaultValue={props.experience.description4}
+            placeholder="Description Serial 4"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription5}
+            defaultValue={props.experience.description5}
+            placeholder="Description Serial 5"
           />
 
           <div className="imgAndDrop">
@@ -182,10 +283,8 @@ const AdminSingleJobExperience = ({ experience }) => {
   const [modalShow, setModalShow] = React.useState(false);
   const onPressDelete = async (id) => {
     try {
-      deleteDoc(doc(db, "experience", id));
-    } catch (err) {
-      console.log("err--->", err);
-    }
+      deleteDoc(doc(db, "Experience", id));
+    } catch (err) {}
   };
   const onPressDeleteMsg = (id) => {
     swal(

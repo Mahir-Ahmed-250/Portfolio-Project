@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../../Components/Title/Title";
 import JobExperience from "../JobExperience/JobExperience";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../Hooks/useFirebase";
 
 const JobExperiences = () => {
   const [experiences, setExperiences] = useState([]);
-  console.log(experiences);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("Jobs.JSON")
-      .then((res) => res.json())
-      .then((data) => setExperiences(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Experience"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setExperiences(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
   return (
     <>
