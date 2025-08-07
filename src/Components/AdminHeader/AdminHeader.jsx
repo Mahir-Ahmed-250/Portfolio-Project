@@ -5,6 +5,7 @@ import { IoHome } from "react-icons/io5";
 import useFirebase from "../../Hooks/useFirebase";
 import swal from "sweetalert";
 import { FiLogOut } from "react-icons/fi";
+import { RiAdminFill } from "react-icons/ri";
 
 const AdminHeader = ({ title }) => {
   const { logOut } = useFirebase();
@@ -42,6 +43,16 @@ const AdminHeader = ({ title }) => {
           <h1 className="adminHeaderTitle">{title}</h1>
         </div>
         <div className="adminHeaderIconContainer">
+          <Link
+            to="/admin"
+            style={{ cursor: "pointer", textDecoration: "none" }}>
+            <span className="adminHeaderIconBtn ">
+              <div className="adminHeaderIcon me-4">
+                <RiAdminFill className="me-2" />
+                <span>Admin Home</span>
+              </div>
+            </span>
+          </Link>
           <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
             <span className="adminHeaderIconBtn">
               <div className="adminHeaderIcon">

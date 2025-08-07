@@ -7,15 +7,29 @@ import "./AdminSingleJobExperience.css";
 
 function MyVerticallyCenteredModal(props) {
   const [serial, setSerial] = useState(props.experience.serial);
-  const [companyPosition, setCompanyPosition] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [workDuration, setWorkDuration] = useState("");
-  const [description1, setDescription1] = useState("");
-  const [description2, setDescription2] = useState("");
-  const [description3, setDescription3] = useState("");
-  const [description4, setDescription4] = useState("");
-  const [description5, setDescription5] = useState("");
-  const [baseImage, setBaseImage] = useState("");
+  const [companyPosition, setCompanyPosition] = useState(
+    props.experience.companyPosition
+  );
+  const [companyName, setCompanyName] = useState(props.experience.companyName);
+  const [workDuration, setWorkDuration] = useState(
+    props.experience.workDuration
+  );
+  const [description1, setDescription1] = useState(
+    props.experience.description1
+  );
+  const [description2, setDescription2] = useState(
+    props.experience.description2
+  );
+  const [description3, setDescription3] = useState(
+    props.experience.description3
+  );
+  const [description4, setDescription4] = useState(
+    props.experience.description4
+  );
+  const [description5, setDescription5] = useState(
+    props.experience.description5
+  );
+  const [baseImage, setBaseImage] = useState(props.experience.img);
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
 
