@@ -2,7 +2,7 @@ import React from "react";
 import "./MySkill.css";
 
 const MySkill = ({ skill, index }) => {
-  const { name, img } = skill;
+  const { skillName, img } = skill;
 
   const aosAnimations = [
     "flip-left",
@@ -21,10 +21,10 @@ const MySkill = ({ skill, index }) => {
       data-aos-duration="3000" // slower animation (1.5s)
     >
       <center style={{ borderRadius: "10px" }} className="skillsCard">
-        <img src={img} width="40%" alt={name} />
+        <img src={img} width="40%" height="60%" alt="skillLogo" />
         <br />
         <br />
-        <span className="skillsName">{name}</span>
+        <span className="skillsName">{skillName}</span>
       </center>
     </div>
   );

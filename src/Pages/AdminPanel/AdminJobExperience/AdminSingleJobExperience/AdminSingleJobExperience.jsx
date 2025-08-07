@@ -135,7 +135,7 @@ function MyVerticallyCenteredModal(props) {
             buttons: {
               cancel: "Cancel",
               catch: {
-                text: "Go to Experience",
+                text: "Go to Home",
                 value: "catch",
               },
             },

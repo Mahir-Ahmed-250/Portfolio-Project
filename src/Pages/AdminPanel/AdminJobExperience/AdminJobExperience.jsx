@@ -19,6 +19,7 @@ const AdminJobExperience = () => {
   const [description4, setDescription4] = useState("");
   const [description5, setDescription5] = useState("");
   const [baseImage, setBaseImage] = useState("");
+  const [experiences, setExperiences] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
 
@@ -148,7 +149,6 @@ const AdminJobExperience = () => {
         });
       }
     } catch (error) {
-      console.log(error);
       swal({
         title: "Sorry",
         text: "",
@@ -159,13 +159,12 @@ const AdminJobExperience = () => {
     setLoading(false);
   };
 
-  const [experiences, setExperiences] = useState([]);
   useEffect(() => {
     setLoading2(true);
     //create the query
     const q = query(collection(db, "Experience"));
     //create listener
-    const machineryListenerSubscription = onSnapshot(q, (querySnapShot) => {
+    const experienceListenerSubscription = onSnapshot(q, (querySnapShot) => {
       const list = [];
       querySnapShot.forEach((doc) => {
         list.push({ ...doc.data(), id: doc.id });
@@ -173,7 +172,7 @@ const AdminJobExperience = () => {
       setExperiences(list);
       setLoading2(false);
     });
-    return machineryListenerSubscription;
+    return experienceListenerSubscription;
   }, []);
 
   if (loading) {
