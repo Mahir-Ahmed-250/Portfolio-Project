@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router";
+import { Route, Routes, useLocation, useNavigate } from "react-router";
 import Home from "./Pages/Home/Home";
 import "./index.css";
 import AdminHome from "./Pages/AdminPanel/AdminHome/AdminHome";
@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import useFirebase from "./Hooks/useFirebase";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "./Assets/Loading.json";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import AdminLogin from "./Pages/AdminPanel/AdminLogin/AdminLogin";
 import AdminJobExperience from "./Pages/AdminPanel/AdminJobExperience/AdminJobExperience";
 import AdminSkills from "./Pages/AdminPanel/AdminSkills/AdminSkills";
@@ -14,6 +14,29 @@ import AdminProjects from "./Pages/AdminPanel/AdminProjects/AdminProjects";
 import AdminArticles from "./Pages/AdminPanel/AdminArticles/AdminArticles";
 
 function App() {
+  const { user } = useFirebase();
+  const { loading } = useFirebase();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Redirect unauthenticated user from protected admin routes
+  useEffect(() => {
+    const adminProtectedRoutes = [
+      "/admin",
+      "/admin/jobExperiences",
+      "/admin/skills",
+      "/admin/projects",
+      "/admin/articles",
+    ];
+
+    const isAdminPath = adminProtectedRoutes.some((route) =>
+      location.pathname.startsWith(route)
+    );
+
+    if (!user && isAdminPath) {
+      navigate("/admin");
+    }
+  }, [user, location.pathname, navigate]);
   const Wrapper = ({ children }) => {
     const location = useLocation();
     useLayoutEffect(() => {
@@ -21,8 +44,7 @@ function App() {
     }, [location.pathname]);
     return children;
   };
-  const { user } = useFirebase();
-  const { loading } = useFirebase();
+
   if (loading) {
     return (
       <>
