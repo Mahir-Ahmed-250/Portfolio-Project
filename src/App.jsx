@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router";
+import { Navigate, Route, Routes, useLocation } from "react-router";
 import Home from "./Pages/Home/Home";
 import "./index.css";
 import AdminHome from "./Pages/AdminPanel/AdminHome/AdminHome";
@@ -78,7 +78,7 @@ function App() {
             </div>
           </>
         )}
-
+        <Route path="*" element={<Navigate to="/" />} />
         <ToastContainer
           position="top-right"
           autoClose={5000}
