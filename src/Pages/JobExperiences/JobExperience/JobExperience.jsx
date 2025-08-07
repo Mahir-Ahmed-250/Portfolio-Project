@@ -18,7 +18,7 @@ const JobExperience = ({ experience, index }) => {
 
   return (
     <div
-      className="col-md-6 mt-4"
+      className="col-lg-6 mt-4"
       data-aos={aosAnimation}
       data-aos-offset="500"
       data-aos-delay="80"

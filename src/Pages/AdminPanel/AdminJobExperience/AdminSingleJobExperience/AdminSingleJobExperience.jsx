@@ -129,13 +129,13 @@ function MyVerticallyCenteredModal(props) {
 
         swal(
           "Well Done!",
-          "You have successfully Updated the experience!",
+          "You have successfully Updated the Experience!",
           "success",
           {
             buttons: {
               cancel: "Cancel",
               catch: {
-                text: "Go to experience",
+                text: "Go to Experience",
                 value: "catch",
               },
             },

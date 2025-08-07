@@ -37,7 +37,7 @@ const useFirebase = () => {
         }
       })
       .catch((error) => {
-        toast.error("Sorry");
+        toast.error("Wrong Email or Password");
       })
       .finally(() => setLoading(false));
   };
