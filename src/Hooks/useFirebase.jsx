@@ -12,6 +12,7 @@ import { getStorage } from "firebase/storage";
 import initializeFirebase from "../Firebase/firebase.init";
 import { toast } from "react-toastify";
 import swal from "sweetalert";
+import { Navigate } from "react-router";
 export const auth = getAuth(initializeFirebase());
 export const db = getFirestore(initializeFirebase());
 export const storage = getStorage(initializeFirebase());
@@ -59,7 +60,7 @@ const useFirebase = () => {
   const logOut = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        Navigate("/admin");
       })
       .catch((error) => {
         // An error happened.
