@@ -78,7 +78,10 @@ function App() {
             </div>
           </>
         )}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Routes>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+
         <ToastContainer
           position="top-right"
           autoClose={5000}
