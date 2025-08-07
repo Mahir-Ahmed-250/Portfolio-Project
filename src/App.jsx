@@ -74,10 +74,12 @@ function App() {
             <div className="adminBg">
               <Routes>
                 <Route path="/admin" element={<AdminLogin />} />
+                <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </div>
           </>
         )}
+
         <ToastContainer
           position="top-right"
           autoClose={5000}
