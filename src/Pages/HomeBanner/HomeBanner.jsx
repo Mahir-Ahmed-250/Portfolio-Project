@@ -8,6 +8,7 @@ import { FaLink } from "react-icons/fa6";
 import Img from "../../Assets/Banner.jpg";
 import Title from "../../Components/Title/Title";
 import "./HomeBanner.css";
+import { Link } from "react-router-dom";
 
 const HomeBanner = () => {
   return (
@@ -54,23 +55,37 @@ const HomeBanner = () => {
             storyteller, visualization expert, and BI strategist—bridging the
             gap between data complexity and business clarity.
           </p>
-          <FaLinkedin
-            style={{
-              fontSize: "40px",
-              border: "2px solid",
-              padding: "5px",
-              borderRadius: "50%",
-            }}
-          />
-          <FaGithub
-            style={{
-              fontSize: "40px",
-              border: "2px solid",
-              padding: "5px",
-              marginLeft: "8px",
-              borderRadius: "50%",
-            }}
-          />
+          <a
+            href="https://www.linkedin.com/in/mehedihtushar84659a148/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "black" }}>
+            <FaLinkedin
+              style={{
+                fontSize: "40px",
+                border: "2px solid",
+                padding: "5px",
+                borderRadius: "50%",
+              }}
+            />
+          </a>
+
+          <a
+            href="https://github.com/Tushar3749"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "black" }}>
+            <FaGithub
+              style={{
+                fontSize: "40px",
+                border: "2px solid",
+                padding: "5px",
+                marginLeft: "8px",
+                borderRadius: "50%",
+              }}
+            />
+          </a>
+
           <FaFacebook
             style={{
               fontSize: "40px",
@@ -80,6 +95,7 @@ const HomeBanner = () => {
               borderRadius: "50%",
             }}
           />
+
           <FaTwitter
             style={{
               fontSize: "40px",
@@ -90,7 +106,11 @@ const HomeBanner = () => {
             }}
           />
           <h5 style={{ marginTop: "20px" }}>
-            <button className="hireBtn">Hire Me</button>
+            <a href={`#contact`}>
+              {" "}
+              <button className="hireBtn">Hire Me</button>
+            </a>
+
             <button className="resumeBtn">
               <FaLink /> MY RESUME
             </button>

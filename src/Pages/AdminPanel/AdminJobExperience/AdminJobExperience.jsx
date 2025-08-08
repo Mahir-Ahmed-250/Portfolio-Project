@@ -120,7 +120,7 @@ const AdminJobExperience = () => {
         setBaseImage("");
         swal(
           "Well Done!",
-          "You have successfully Added an New Experience!",
+          "You have successfully Added a New Experience!",
           "success",
           {
             buttons: {

@@ -27,9 +27,11 @@ const JobExperiences = () => {
     <>
       <Title title="Job" title2="Experience" />
       <div className="row">
-        {experiences.map((experience, index) => (
-          <JobExperience key={index} experience={experience} index={index} />
-        ))}
+        {experiences
+          .sort((a, b) => a.serial - b.serial)
+          .map((experience, index) => (
+            <JobExperience key={index} experience={experience} index={index} />
+          ))}
       </div>
       <hr className="mt-4" />
     </>

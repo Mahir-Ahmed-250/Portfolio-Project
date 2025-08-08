@@ -34,9 +34,11 @@ const MySkills = () => {
       <div
         className="skills-container d-flex flex-wrap justify-content-center"
         id="skills">
-        {skills.map((skill, index) => (
-          <MySkill key={index} skill={skill} index={index} />
-        ))}
+        {skills
+          .sort((a, b) => a.serial - b.serial)
+          .map((skill, index) => (
+            <MySkill key={index} skill={skill} index={index} />
+          ))}
       </div>
       <hr className="mt-4" />
     </>
