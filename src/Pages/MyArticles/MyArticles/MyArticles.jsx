@@ -4,14 +4,34 @@ import MyArticle from "../MyArticle/MyArticle";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./MyArticles.css";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../Hooks/useFirebase";
 
 const MyArticles = () => {
   const [articles, setArticles] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   fetch("Articles.JSON")
+  //     .then((res) => res.json())
+  //     .then((data) => setArticles(data));
+  // }, []);
   useEffect(() => {
-    fetch("Articles.JSON")
-      .then((res) => res.json())
-      .then((data) => setArticles(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Article"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setArticles(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
+
   const responsive = {
     desktop: {
       breakpoint: {
@@ -54,8 +74,7 @@ const MyArticles = () => {
           responsive={responsive}
           rewind={false}
           slidesToSlide={1}
-          arrows={false}
-        >
+          arrows={false}>
           {articles.map((article) => (
             <MyArticle key={article.id} article={article} />
           ))}

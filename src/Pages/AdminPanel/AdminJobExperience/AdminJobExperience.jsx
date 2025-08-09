@@ -7,6 +7,7 @@ import animationData from "../../../Assets/Loading.json";
 import Title from "../../../Components/Title/Title";
 import AdminSingleJobExperience from "./AdminSingleJobExperience/AdminSingleJobExperience";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
+import LoadingSkeleton from "../../../Components/LoadingSkeleton/LoadingSkeleton";
 
 const AdminJobExperience = () => {
   const [serial, setSerial] = useState("");
@@ -201,7 +202,9 @@ const AdminJobExperience = () => {
       <div className="container">
         <div className="row">
           {loading2 ? (
-            <></>
+            <>
+              <LoadingSkeleton />
+            </>
           ) : (
             <>
               {experiences

@@ -7,6 +7,7 @@ import { db } from "../../../Hooks/useFirebase";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../../../Assets/Loading.json";
 import AdminSingleProject from "./AdminSingleProject/AdminSingleProject";
+import LoadingSkeleton from "../../../Components/LoadingSkeleton/LoadingSkeleton";
 
 const AdminProjects = () => {
   const [serial, setSerial] = useState("");
@@ -155,7 +156,9 @@ const AdminProjects = () => {
       <div className="container">
         <div className="row">
           {loading2 ? (
-            <></>
+            <>
+              <LoadingSkeleton />
+            </>
           ) : (
             <>
               {projects

@@ -14,8 +14,6 @@ function MyVerticallyCenteredModal(props) {
   const [projectTechnologies, setProjectTechnologies] = useState(
     props.project.projectTechnologies
   );
-  const [loading, setLoading] = useState(false);
-  const [loading2, setLoading2] = useState(false);
 
   const handleSerial = (e) => {
     const result = e.target.value;
@@ -55,7 +53,7 @@ function MyVerticallyCenteredModal(props) {
     });
   };
   const onClickUpdate = async () => {
-    const skillRef = doc(db, "Project", props.project.id);
+    const projectRef = doc(db, "Project", props.project.id);
     try {
       if (
         baseImage &&
@@ -64,7 +62,7 @@ function MyVerticallyCenteredModal(props) {
         projectDescription &&
         projectTechnologies
       ) {
-        await updateDoc(skillRef, {
+        await updateDoc(projectRef, {
           serial: serial,
           projectName: projectName,
           projectDescription: projectDescription,
@@ -211,7 +209,7 @@ const AdminSingleProject = ({ project }) => {
   const onPressDeleteMsg = (id) => {
     swal(
       "Delete Warning!",
-      "Do you really want to Delete this Skill?",
+      "Do you really want to Delete this Project?",
       "warning",
       {
         buttons: {
@@ -228,7 +226,7 @@ const AdminSingleProject = ({ project }) => {
           onPressDelete(id);
           swal(
             "Success!",
-            "You have successfully Delete the Skill!",
+            "You have successfully Delete the Project!",
             "success"
           );
           break;

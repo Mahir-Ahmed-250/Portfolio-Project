@@ -30,8 +30,6 @@ function MyVerticallyCenteredModal(props) {
     props.experience.description5
   );
   const [baseImage, setBaseImage] = useState(props.experience.img);
-  const [loading, setLoading] = useState(false);
-  const [loading2, setLoading2] = useState(false);
 
   const handleSerial = (e) => {
     const result = e.target.value;
