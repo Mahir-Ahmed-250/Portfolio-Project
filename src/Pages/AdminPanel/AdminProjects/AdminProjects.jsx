@@ -14,6 +14,7 @@ const AdminProjects = () => {
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [projectTechnologies, setProjectTechnologies] = useState("");
+  const [projectLink, setProjectLink] = useState("");
   const [baseImage, setBaseImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
@@ -34,6 +35,10 @@ const AdminProjects = () => {
   const handleProjectTechnologies = (e) => {
     const result = e.target.value;
     setProjectTechnologies(result);
+  };
+  const handleProjectLink = (e) => {
+    const result = e.target.value;
+    setProjectLink(result);
   };
   const uploadImage = async (e) => {
     const file = e.target.files[0];
@@ -63,17 +68,20 @@ const AdminProjects = () => {
         serial &&
         projectName &&
         projectDescription &&
-        projectTechnologies
+        projectTechnologies &&
+        projectLink
       ) {
         await addDoc(collection(db, "Project"), {
           serial: serial,
           projectName: projectName,
           projectDescription: projectDescription,
           projectTechnologies: projectTechnologies,
+          projectLink: projectLink,
           img: baseImage,
         });
         setSerial("");
         setProjectName("");
+        setProjectLink("");
         setBaseImage("");
         swal(
           "Well Done!",
@@ -207,6 +215,13 @@ const AdminProjects = () => {
               className="form-control form-control-lg mb-2 w-100"
               onChange={handleProjectTechnologies}
               placeholder="Project Technologies"
+            />
+            <input
+              type="text"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-100"
+              onChange={handleProjectLink}
+              placeholder="Project Link"
             />
             <div className="imgAndDrop">
               <div className="file-drop-area">

@@ -12,6 +12,7 @@ import LoadingSkeleton from "../../../Components/LoadingSkeleton/LoadingSkeleton
 const AdminArticles = () => {
   const [serial, setSerial] = useState("");
   const [articleName, setArticleName] = useState("");
+  const [articleDescription, setArticleDescription] = useState("");
   const [articleLink, setArticleLink] = useState("");
   const [baseImage, setBaseImage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,6 +27,11 @@ const AdminArticles = () => {
   const handleArticleName = (e) => {
     const result = e.target.value;
     setArticleName(result);
+  };
+
+  const handleArticleDescription = (e) => {
+    const result = e.target.value;
+    setArticleDescription(result);
   };
 
   const handleArticleLink = (e) => {
@@ -55,15 +61,23 @@ const AdminArticles = () => {
   const onClickCreate = async () => {
     setLoading(true);
     try {
-      if (baseImage && serial && articleName && articleLink) {
+      if (
+        baseImage &&
+        serial &&
+        articleName &&
+        articleDescription &&
+        articleLink
+      ) {
         await addDoc(collection(db, "Article"), {
           serial: serial,
           articleName: articleName,
+          articleDescription: articleDescription,
           articleLink: articleLink,
           img: baseImage,
         });
         setSerial("");
         setArticleName("");
+        setArticleDescription("");
         setBaseImage("");
         swal(
           "Well Done!",
@@ -180,7 +194,15 @@ const AdminArticles = () => {
               onChange={handleArticleName}
               placeholder="Article Name"
             />
-
+            <textarea
+              type="text"
+              rows="4"
+              cols="50"
+              id="form3Example3"
+              className="form-control form-control-lg mb-2 w-100"
+              onChange={handleArticleDescription}
+              placeholder="Article Description"
+            />
             <input
               type="text"
               id="form3Example3"

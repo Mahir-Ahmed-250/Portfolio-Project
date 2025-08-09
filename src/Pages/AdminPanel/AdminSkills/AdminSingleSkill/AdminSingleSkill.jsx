@@ -8,8 +8,6 @@ function MyVerticallyCenteredModal(props) {
   const [serial, setSerial] = useState(props.skill.serial);
   const [skillName, setSkillName] = useState(props.skill.skillName);
   const [baseImage, setBaseImage] = useState(props.skill.img);
-  const [loading, setLoading] = useState(false);
-  const [loading2, setLoading2] = useState(false);
 
   const handleSerial = (e) => {
     const result = e.target.value;
@@ -100,7 +98,7 @@ function MyVerticallyCenteredModal(props) {
       centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.skill.name}
+          {props.skill.skillName}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

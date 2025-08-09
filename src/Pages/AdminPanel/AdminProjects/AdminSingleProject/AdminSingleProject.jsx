@@ -14,6 +14,7 @@ function MyVerticallyCenteredModal(props) {
   const [projectTechnologies, setProjectTechnologies] = useState(
     props.project.projectTechnologies
   );
+  const [projectLink, setProjectLink] = useState("");
 
   const handleSerial = (e) => {
     const result = e.target.value;
@@ -31,6 +32,10 @@ function MyVerticallyCenteredModal(props) {
   const handleProjectTechnologies = (e) => {
     const result = e.target.value;
     setProjectTechnologies(result);
+  };
+  const handleProjectLink = (e) => {
+    const result = e.target.value;
+    setProjectLink(result);
   };
 
   const uploadImage = async (e) => {
@@ -68,11 +73,12 @@ function MyVerticallyCenteredModal(props) {
           projectDescription: projectDescription,
           projectTechnologies: projectTechnologies,
           img: baseImage,
+          projectLink: projectLink,
         });
         setSerial(serial);
         setProjectName(projectName);
         setBaseImage(baseImage);
-
+        setProjectLink(projectLink);
         swal(
           "Well Done!",
           "You have successfully Updated the Project!",
@@ -120,7 +126,7 @@ function MyVerticallyCenteredModal(props) {
       centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.project.name}
+          {props.project.projectName}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -163,7 +169,14 @@ function MyVerticallyCenteredModal(props) {
             defaultValue={props.project.projectTechnologies}
             placeholder="Project Technologies"
           />
-
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleProjectLink}
+            defaultValue={props.project.projectLink}
+            placeholder="Project Link"
+          />
           <div className="imgAndDrop">
             <div
               className="file-drop-area"

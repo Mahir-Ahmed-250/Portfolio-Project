@@ -3,12 +3,10 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
 import { FaLink } from "react-icons/fa6";
 import Img from "../../Assets/Banner.jpg";
 import Title from "../../Components/Title/Title";
 import "./HomeBanner.css";
-import { Link } from "react-router-dom";
 
 const HomeBanner = () => {
   return (
@@ -96,15 +94,6 @@ const HomeBanner = () => {
             }}
           />
 
-          <FaTwitter
-            style={{
-              fontSize: "40px",
-              border: "2px solid",
-              padding: "5px",
-              marginLeft: "8px",
-              borderRadius: "50%",
-            }}
-          />
           <h5 style={{ marginTop: "20px" }}>
             <a href={`#contact`}>
               {" "}

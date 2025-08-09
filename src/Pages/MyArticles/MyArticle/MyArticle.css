@@ -17,6 +17,15 @@
     overflow-wrap: break-word;
 }
 
+.articleDescription {
+    font-family: "Raleway", sans-serif;
+    color: #151515;
+    font-size: 14px;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .readMore {
     font-family: "Raleway", sans-serif;
     color: #a5a4a4;

@@ -6,8 +6,11 @@ import { db } from "../../../../Hooks/useFirebase";
 
 function MyVerticallyCenteredModal(props) {
   const [serial, setSerial] = useState(props.article.serial);
-  const [articleName, setArticleName] = useState(props.article.skillName);
-  const [articleLink, setArticleLink] = useState(props.article.skillLink);
+  const [articleName, setArticleName] = useState(props.article.articleName);
+  const [articleDescription, setArticleDescription] = useState(
+    props.article.articleDescription
+  );
+  const [articleLink, setArticleLink] = useState(props.article.articleLink);
   const [baseImage, setBaseImage] = useState(props.article.img);
 
   const handleSerial = (e) => {
@@ -19,7 +22,10 @@ function MyVerticallyCenteredModal(props) {
     const result = e.target.value;
     setArticleName(result);
   };
-
+  const handleArticleDescription = (e) => {
+    const result = e.target.value;
+    setArticleDescription(result);
+  };
   const handleArticleLink = (e) => {
     const result = e.target.value;
     setArticleLink(result);
@@ -47,15 +53,23 @@ function MyVerticallyCenteredModal(props) {
   const onClickUpdate = async () => {
     const articleRef = doc(db, "Article", props.article.id);
     try {
-      if (baseImage && serial && articleName && articleLink) {
+      if (
+        baseImage &&
+        serial &&
+        articleName &&
+        articleDescription &&
+        articleLink
+      ) {
         await updateDoc(articleRef, {
           serial: serial,
           articleName: articleName,
+          articleDescription: articleDescription,
           articleLink: articleLink,
           img: baseImage,
         });
         setSerial(serial);
         setArticleName(articleName);
+        setArticleDescription(articleDescription);
         setArticleLink(articleLink);
         setBaseImage(baseImage);
 
@@ -132,7 +146,16 @@ function MyVerticallyCenteredModal(props) {
             defaultValue={props.article.articleName}
             placeholder="Article Name"
           />
-
+          <textarea
+            type="text"
+            rows="4"
+            cols="50"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleArticleDescription}
+            defaultValue={props.article.articleDescription}
+            placeholder="Article Description"
+          />
           <input
             type="text"
             id="form3Example3"
