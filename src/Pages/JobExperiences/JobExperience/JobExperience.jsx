@@ -12,6 +12,9 @@ const JobExperience = ({ experience, index }) => {
     description3,
     description4,
     description5,
+    description6,
+    description7,
+    description8,
   } = experience;
 
   const aosAnimation = index % 2 === 0 ? "fade-up" : "fade-down"; // alternate
@@ -25,7 +28,12 @@ const JobExperience = ({ experience, index }) => {
       data-aos-duration="2000">
       <div className="companyCard w-100">
         <div className="companyCardHeader ms-4">
-          <img style={{ borderRadius: "10px" }} src={img} width="15%" alt="" />
+          <img
+            style={{ borderRadius: "10px", height: "100px" }}
+            src={img}
+            width="20%"
+            alt=""
+          />
           <div className="ms-3">
             <span className="companyPosition">{companyPosition}</span>
             <br />
@@ -39,6 +47,9 @@ const JobExperience = ({ experience, index }) => {
           {description3 ? <li>{description3}</li> : <></>}
           {description4 ? <li>{description4}</li> : <></>}
           {description5 ? <li>{description5}</li> : <></>}
+          {description6 ? <li>{description6}</li> : <></>}
+          {description7 ? <li>{description7}</li> : <></>}
+          {description8 ? <li>{description8}</li> : <></>}
         </ul>
       </div>
     </div>

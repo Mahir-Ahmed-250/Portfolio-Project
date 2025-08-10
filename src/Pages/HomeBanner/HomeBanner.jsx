@@ -19,8 +19,9 @@ const HomeBanner = () => {
             <Typewriter
               words={[
                 "Microsoft Certified Data Analyst",
-                "Data Engineer",
+                "Business Intelligence Developer",
                 "Data Enthusiast",
+                "Story Teller",
               ]}
               loop={5}
               cursor

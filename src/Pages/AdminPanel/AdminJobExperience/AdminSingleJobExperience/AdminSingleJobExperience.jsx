@@ -29,6 +29,15 @@ function MyVerticallyCenteredModal(props) {
   const [description5, setDescription5] = useState(
     props.experience.description5
   );
+  const [description6, setDescription6] = useState(
+    props.experience.description6
+  );
+  const [description7, setDescription7] = useState(
+    props.experience.description7
+  );
+  const [description8, setDescription8] = useState(
+    props.experience.description8
+  );
   const [baseImage, setBaseImage] = useState(props.experience.img);
 
   const handleSerial = (e) => {
@@ -68,6 +77,18 @@ function MyVerticallyCenteredModal(props) {
     const result = e.target.value;
     setDescription5(result);
   };
+  const handleDescription6 = (e) => {
+    const result = e.target.value;
+    setDescription6(result);
+  };
+  const handleDescription7 = (e) => {
+    const result = e.target.value;
+    setDescription7(result);
+  };
+  const handleDescription8 = (e) => {
+    const result = e.target.value;
+    setDescription8(result);
+  };
   const uploadImage = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -100,7 +121,10 @@ function MyVerticallyCenteredModal(props) {
         description2 ||
         description3 ||
         description4 ||
-        description5
+        description5 ||
+        description6 ||
+        description7 ||
+        description8
       ) {
         await updateDoc(experienceRef, {
           serial: serial,
@@ -112,6 +136,9 @@ function MyVerticallyCenteredModal(props) {
           description3: description3,
           description4: description4,
           description5: description5,
+          description6: description6,
+          description7: description7,
+          description8: description8,
           img: baseImage,
         });
         setSerial(serial);
@@ -123,6 +150,9 @@ function MyVerticallyCenteredModal(props) {
         setDescription3(description3);
         setDescription4(description4);
         setDescription5(description5);
+        setDescription6(description6);
+        setDescription7(description7);
+        setDescription8(description8);
         setBaseImage(baseImage);
 
         swal(
@@ -254,6 +284,30 @@ function MyVerticallyCenteredModal(props) {
             onChange={handleDescription5}
             defaultValue={props.experience.description5}
             placeholder="Description Serial 5"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription6}
+            defaultValue={props.experience.description6}
+            placeholder="Description Serial 6"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription7}
+            defaultValue={props.experience.description7}
+            placeholder="Description Serial 7"
+          />
+          <input
+            type="text"
+            id="form3Example3"
+            className="form-control form-control-lg mb-2 w-100"
+            onChange={handleDescription8}
+            defaultValue={props.experience.description8}
+            placeholder="Description Serial 8"
           />
 
           <div className="imgAndDrop">
