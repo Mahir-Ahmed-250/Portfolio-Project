@@ -23,7 +23,7 @@ const HomeBanner = () => {
                 "Data Enthusiast",
                 "Story Teller",
               ]}
-              loop={5}
+              loop={0}
               cursor
               cursorStyle="_"
               typeSpeed={70}

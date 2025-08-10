@@ -21,10 +21,15 @@ const MySkill = ({ skill, index }) => {
       data-aos-duration="3000" // slower animation (1.5s)
     >
       <center style={{ borderRadius: "10px" }} className="skillsCard">
-        <img src={img} width="40%" height="60%" alt="skillLogo" />
+        <img
+          src={img}
+          width="40%"
+          height="60%"
+          alt="skillLogo"
+          className="mb-2"
+        />
         <br />
-        <br />
-        <span className="skillsName">{skillName}</span>
+        <p className="skillsName">{skillName}</p>
       </center>
     </div>
   );

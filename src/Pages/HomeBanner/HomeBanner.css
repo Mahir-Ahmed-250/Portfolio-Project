@@ -87,4 +87,8 @@
     .bannerImg {
         width: 100%;
     }
+
+    .homeTypeWriter {
+        font-size: 20px;
+    }
 }

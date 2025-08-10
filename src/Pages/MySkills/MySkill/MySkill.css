@@ -9,12 +9,11 @@
     background-color: rgb(20, 27, 36);
     height: 100%;
     padding-top: 20px;
+    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
     .skillsName {
-
-        font-size: 12px;
-
+        font-size: 10px;
     }
 }
